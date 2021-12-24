@@ -1,0 +1,110 @@
+.main{
+    text-align: center;
+}
+.login-form {
+    max-width: 600px;
+    margin: 0 auto;
+    border: 2px solid #f5c00290;
+
+    padding: 50px;
+    border-radius: 10px;
+  }
+  
+  
+
+ .login-form-input {
+    
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid rgba(114, 114, 114, 0.506);
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+  
+  .label,
+  section > label {
+    line-height: 2;
+    text-align: left;
+    display: block;
+    margin-bottom: 13px;
+    margin-top: 20px;
+    color: white;
+    font-size: 14px;
+    font-weight: 200;
+  }
+  
+  .submit-button{
+    position: relative;
+    background: rgba(207, 140, 14, 0.793);
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: 4px;
+  display: block;
+    appearance: none;
+    border-radius: 4px;
+  width: 100%;
+    font-weight: lighter;
+    transition: 0.3s all;
+    cursor: pointer;
+  }
+  .submit-button:hover{
+    background: rgb(236, 161, 21);
+  }
+  .error{
+      color: red;
+  }
+
+  
+  .create-account{
+    /* background-color: rgb(224, 112, 71); */
+    border: none;
+    width: 500px;
+    padding: 13px 30px;
+    font-weight: 700;
+    color: rgb(42, 16, 16);
+    border-radius: 10px;
+    text-transform: uppercase;
+    margin-right: 10px;
+    margin-top: 100px;
+    cursor: pointer;
+  }
+
+  .google-signIN{
+    background: rgba(207, 140, 14, 0.793);
+    border: none;
+    width: 300px;
+    padding: 10px 30px;
+    font-weight: 700;
+    color: white;
+    border-radius: 10px;
+    text-transform: uppercase;
+    margin-right: 10px;
+    cursor: pointer;
+    
+  }
+  .google-signIN:hover{
+    background: rgb(236, 161, 21);
+  }
+
+  .facebook-login-btn{
+    background-color: rgba(21, 58, 206, 0.841);
+    border: none;
+    width: 300px;
+    padding: 10px 30px;
+    font-weight: 700;
+    color: white;
+    border-radius: 10px;
+    text-transform: uppercase;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  .facebook-login-btn:hover{
+    background-color: rgba(17, 58, 219, 0.979);
+  }

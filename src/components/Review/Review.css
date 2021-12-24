@@ -1,0 +1,16 @@
+.review-div{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.cart-div{
+    margin: 150px;
+    position: fixed;
+    top: 0;
+    right: 0
+}
+
+.review-product-container{
+    margin-left: 30px;
+}

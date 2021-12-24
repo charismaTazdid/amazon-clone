@@ -1,0 +1,8 @@
+.primeDiv{
+    height: 650vh;
+    background-image: url('../../images/amzon-prime.png');
+    width: 100%;
+    object-fit: contain;
+    background-position: center;
+    background-size: cover;
+}

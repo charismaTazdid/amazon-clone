@@ -1,0 +1,42 @@
+.product{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    margin: 10px;
+    padding: 10px 15px 15px 15px;
+    width: 450px;
+    border-radius: 4px;
+}
+.product h4{
+    color: blue;
+    text-decoration: none;
+}
+.img{
+    margin-right: 20px;
+}
+.price{
+    font-weight: 600;
+    color: rgb(46, 2, 2);
+}
+
+.productBtn{
+    background-color: #ffb700;
+    border: none;
+    padding: 7px 10px;
+    width: 150px;
+  cursor: pointer;
+    color: #300202;
+    font-weight: 500;
+    border-radius: 7px;
+ 
+}
+.productBtn:hover{
+    transform: scale(1.03);
+}
+
+.product-name{
+    text-decoration: none;
+}
+.stock{
+    color: rgb(98, 0, 38);
+}

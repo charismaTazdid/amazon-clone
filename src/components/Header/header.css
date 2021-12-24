@@ -1,0 +1,102 @@
+/* .header img{
+    height: 160px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+.header{
+    text-align: center;
+   
+}
+nav{
+    background-color: black;
+    line-height: 45px;
+    font-size: 20px;
+    
+}
+nav a{
+    text-decoration: none;
+    color: wheat;
+    margin-right: 10px;
+    padding: 7px ;
+}
+nav a:hover{
+    background-color: #504f4f;
+    border-radius: 10px;
+    color: white;
+   
+}
+
+.signOut-btn{
+    background-color: rgb(44, 44, 44);
+    color: white;
+    border: none;
+} */
+
+
+.navbar{
+    background-color: #131921;
+    display: flex;
+    align-items: center; 
+}
+.navDiv{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.header-logo{
+    width: 100px;
+    object-fit: contain;
+    margin-top: 18px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.header-search{
+    display: flex;
+     flex: 1;
+}
+.header-search-input{
+    height: 12px;
+    padding: 10px;
+    border: none;
+    width: 100%;
+}
+.header-search-icon{
+    background-color: orange;
+    height: 22px !important;
+    padding: 5px;
+}
+.header-nav{
+    display: flex;
+    justify-content: space-evenly;
+}
+.header-link{
+    color: white;
+    text-decoration: none;
+
+}
+.header-option{
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+
+.heder-option-1{
+    font-size: 10px;
+    
+}
+.header-option-2{
+    font-size: 13px;
+    font-weight: 800;
+}
+.header-basket{
+    display: flex;
+    align-items: center;
+    color: orange;
+}
+.cart-count{
+    margin-left: 5px;
+    margin-right: 25px;
+}
