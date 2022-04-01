@@ -1,14 +1,28 @@
-import { Search,  ShoppingBasket } from '@mui/icons-material';
-import React, { useContext, useEffect, useState} from 'react';
+import { Search, ShoppingBasket } from '@mui/icons-material';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
+import fakeData from '../../fakeData';
+import { getDatabaseCart } from '../../utilities/databaseManager';
 
 import './header.css';
 
 const Header = () => {
     const [logedInUser, setLogedInUser] = useContext(UserContext)
+    const [cart, setCart] = useState([])
 
-    const [cart, setCart] = useContext(UserContext)
+    useEffect(() => {
+        const savedCart = getDatabaseCart();
+        const productsKey = Object.keys(savedCart);
+        const cartProduct = productsKey.map(key => {
+            const product = fakeData.find(pd => pd.key === key);
+
+
+            return product;
+        })
+        setCart(cartProduct)
+
+    }, []);
 
     return (
 
@@ -25,10 +39,10 @@ const Header = () => {
                     <Link to="/login" className='header-link'>
                         <div className='header-option'>
                             <span className='heder-option-1'>Hello {logedInUser.name}</span>
-                           {
-                               logedInUser.name ?  <span className='header-option-2'> Welcome</span> :
-                               <span className='header-option-2'> Sign In</span>
-                           }
+                            {
+                                logedInUser.name ? <span className='header-option-2'> Welcome</span> :
+                                    <span className='header-option-2'> Sign In</span>
+                            }
                         </div>
                     </Link>
                     <Link to="/inventory" className='header-link'>
@@ -43,11 +57,12 @@ const Header = () => {
                             <span className='header-option-2'> Prime </span>
                         </div>
                     </Link>
-                <Link to="/order-review" className='header-link' >
+                    <Link to="/order-review" className='header-link' >
                         <div className="header-basket">
-                            <ShoppingBasket/>
-                            
+                            <ShoppingBasket />
+
                             <span className='header-option-2 cart-count' > {cart.length} </span>
+
                         </div>
                     </Link>
                 </div>

@@ -13,8 +13,8 @@ import HomeBanner from '../HomeBanner/HomeBanner';
 
 const Shop = () => {
     // for Show and display product
-    const first10Product = fakedata.slice(0, 26);
-    const [products, setProduct] = useState(first10Product);
+    const initialDesplayProduct = fakedata.slice(0, 26);
+    const [products, setProduct] = useState(initialDesplayProduct);
 
     // purpose of shoping cart 
     // const [cart, setCart] = useState([]);
@@ -27,6 +27,7 @@ const Shop = () => {
         const previousProduct = productKeys.map(existingKey => {
             const product = fakeData.find(pd => pd.key === existingKey);
             product.quantity = savedCart[existingKey];
+            
             return product;
 
         })

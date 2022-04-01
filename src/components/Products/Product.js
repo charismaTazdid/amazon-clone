@@ -4,6 +4,7 @@ import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
 import './Product.css';
 import { Link } from 'react-router-dom';
 const Product = ({productInfo, handleProduct, showCartBtn}) => {
+    
     const {img, name, price, seller, stock, key} = productInfo;
  
   
@@ -20,7 +21,10 @@ const Product = ({productInfo, handleProduct, showCartBtn}) => {
                 <p><small> Seller : {seller} </small></p>
                 <p className='stock'><small>Only {stock} item avilavle. Order fast.</small></p>
 
-                {showCartBtn && <button className="productBtn" onClick= { () => handleProduct(productInfo)}> <FontAwesomeIcon icon={faCartPlus} />   Add to cart </button>}
+                {
+                showCartBtn && <button className="productBtn" onClick= { () => handleProduct(productInfo)}> <FontAwesomeIcon icon={faCartPlus} />   Add to cart </button>
+                
+                }
                 
             </div>
         </div>

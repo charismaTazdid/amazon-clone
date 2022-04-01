@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import fakeData from '../../fakeData';
 import { getDatabaseCart, removeFromDatabaseCart } from '../../utilities/databaseManager';
 import Cart from '../Cart/Cart';
@@ -8,13 +8,10 @@ import { UserContext } from '../../App';
 import './Review.css'
 
 const Review = () => {
-
-    const [cart, setCart] = useContext(UserContext)
-
+    const [cart, setCart] = useState([])
     const navigate = useNavigate();
-
+    
     const handleCheckOut = () => {
-
         navigate('/shipment')
     };
 
@@ -36,7 +33,7 @@ const Review = () => {
         })
         setCart(cartProduct)
 
-    }, [setCart]);
+    }, []);
 
     return (
         <div className='review-div'>
@@ -44,7 +41,7 @@ const Review = () => {
             <div className="review-product-container">
                 <h2>Total Item: {cart.length}</h2>
                 {
-                    cart.map(pd => <ReviewItem product={pd} key={pd.key} removeProduct={removeProduct}> </ReviewItem>)
+                  cart.map(pd => <ReviewItem product={pd} key={pd.key} removeProduct={removeProduct}> </ReviewItem>)
                 }
             </div>
 

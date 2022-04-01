@@ -23,7 +23,7 @@ function App() {
   const [cart, setCart] = useState([])
 
   return (
-    <UserContext.Provider value={[logedInUser, setLogedInUser, cart, setCart]}>
+    <UserContext.Provider value={[logedInUser, setLogedInUser]}>
       <Router>
       
         <Header> </Header>
