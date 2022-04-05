@@ -1,10 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
-import fakeData from '../../fakeData';
 import { getDatabaseCart, removeFromDatabaseCart } from '../../utilities/databaseManager';
 import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem'
 import { useNavigate } from 'react-router';
-import { UserContext } from '../../App';
 import './Review.css'
 
 const Review = () => {
@@ -25,16 +23,25 @@ const Review = () => {
     useEffect(() => {
         const savedCart = getDatabaseCart();
         const productsKey = Object.keys(savedCart);
-        const cartProduct = productsKey.map(key => {
-            const product = fakeData.find(pd => pd.key === key);
-            product.quantity = savedCart[key];
 
-            return product; 
+        fetch('http://localhost:5000/selectedProduct', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(productsKey)
         })
-        setCart(cartProduct)
+        .then(res => res.json())
+        .then(data => setCart(data))
+
+        // const cartProduct = productsKey.map(key => {
+        //     const product = fakeData.find(pd => pd.key === key);
+        //     product.quantity = savedCart[key];
+
+        //     return product; 
+        // })
+        // setCart(cartProduct)
 
     }, []);
-//bla bla bla
+
     return (
         <div className='review-div'>
 

@@ -14,13 +14,14 @@ const Header = () => {
     useEffect(() => {
         const savedCart = getDatabaseCart();
         const productsKey = Object.keys(savedCart);
-        const cartProduct = productsKey.map(key => {
-            const product = fakeData.find(pd => pd.key === key);
+        // const cartProduct = productsKey.map(key => {
+        //     const product = fakeData.find(pd => pd.key === key);
 
 
-            return product;
-        })
-        setCart(cartProduct)
+        //     return product;
+        // })
+        // setCart(cartProduct)
+        setCart(productsKey)
 
     }, []);
 
@@ -45,7 +46,7 @@ const Header = () => {
                             }
                         </div>
                     </Link>
-                    <Link to="/inventory" className='header-link'>
+                    <Link to="/return" className='header-link'>
                         <div className='header-option'>
                             <span className='heder-option-1'>Returns</span>
                             <span className='header-option-2'> & Orders </span>
@@ -56,6 +57,11 @@ const Header = () => {
                             <span className='heder-option-1'>Your</span>
                             <span className='header-option-2'> Prime </span>
                         </div>
+                    </Link>
+                    <Link to='/inventory' className='header-link'>
+                    <div className='header-option'>
+                                <span className='header-option-2'>Inventory</span>
+                    </div>
                     </Link>
                     <Link to="/order-review" className='header-link' >
                         <div className="header-basket">

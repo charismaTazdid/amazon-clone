@@ -25,6 +25,9 @@ const Product = ({productInfo, handleProduct, showCartBtn}) => {
                 showCartBtn && <button className="productBtn" onClick= { () => handleProduct(productInfo)}> <FontAwesomeIcon icon={faCartPlus} />   Add to cart </button>
                 
                 }
+                {
+                    showCartBtn === false && <p> <strong> go to home page for add to cart </strong> </p>
+                }
                 
             </div>
         </div>

@@ -1,37 +1,37 @@
 import React, { useEffect, useState } from 'react';
-import fakedata from '../../fakeData';
 import './Shop.css';
 import Product from '../Products/Product';
 import { addToDatabaseCart, getDatabaseCart } from '../../utilities/databaseManager';
-import fakeData from '../../fakeData';
-import { useContext } from 'react';
-import { UserContext } from '../../App';
 import HomeBanner from '../HomeBanner/HomeBanner';
-
-
-
 
 const Shop = () => {
     // for Show and display product
-    const initialDesplayProduct = fakedata.slice(0, 26);
-    const [products, setProduct] = useState(initialDesplayProduct);
+    // const initialDesplayProduct = fakedata.slice(0, 26);
+    const [products, setProduct] = useState([]);
 
     // purpose of shoping cart 
     // const [cart, setCart] = useState([]);
     
-    const [cart, setCart] = useContext(UserContext)
+    const [cart, setCart] = useState([])
+   
+    useEffect(()=> {
+        fetch('http://localhost:5000/getProducts')
+            .then(res => res.json())
+            .then(data => setProduct(data))
+    }, [])
 
     useEffect(() => {    //to fix the problem when we visit shop page after sometiem then cart item changed... but we need the previous cart history.
         const savedCart = getDatabaseCart();
         const productKeys = Object.keys(savedCart);
-        const previousProduct = productKeys.map(existingKey => {
-            const product = fakeData.find(pd => pd.key === existingKey);
-            product.quantity = savedCart[existingKey];
-            
-            return product;
 
+        fetch('http://localhost:5000/selectedProduct', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(productKeys)
         })
-        setCart(previousProduct)
+        .then(res => res.json())
+        .then(data => setCart(data))
+        
     }, [])
 
     const handleAddProduct = (product) => {

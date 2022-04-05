@@ -1,16 +1,40 @@
 import React from 'react';
-import './inventory.css'
+import './Inventory.css';
+
 
 const Inventory = () => {
 
+    const handleAddProduct = () => {
+        fetch('http://localhost:5000/addProduct', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify()
+        })
+
+
+    };
+
     return (
-        <div className='sleepingDiv'>
-          <div>
-          <h1  > Developer sleeping...  <br></br> Don't distrub dude 🤪 🤪 </h1>
-          </div>
-          <div>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE-ymHyhaV8se9DNxnjbyqcw8At6xYyLBuKxVNrWR6mD2Vx_fpE3_FjYU-r3Fs4LwdFUs&usqp=CAU" alt="" />
-          </div>
+        <div className='inventory'>
+            <h2>Inventory in under development proccess</h2>
+
+
+            <br />
+            <br />
+            <br />
+            <form action="">
+                <p><span>Name: </span><input type="text" /></p>
+                <p><span> Price: </span><input type="text" /></p>
+                <p><span> Quantity: </span><input type="text" /></p>
+                <p><span>Product Image: </span><input type="file" /></p>
+
+
+                <button onClick={handleAddProduct} type="submit" className='inventoryAddProduct'> Add Product </button>
+            </form>
+
+
+
+
         </div>
     );
 };

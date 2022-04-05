@@ -1,15 +1,19 @@
-.sleepingDiv > div > h1{
-    font-size: 50px;
-    color: orange;
+.inventory{
+    margin:100px 0px 100px 200px ;
 }
-.sleepingDiv{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+
+
+.inventoryAddProduct{
+    background-color: yellow;
+    padding: 5px 15px;
+    border: 2px solid rgb(213, 232, 103);
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 1s;
 }
-.sleepingDiv > div > img{
-    height: 400px;
-   width: 700px;
- 
+.inventoryAddProduct:hover{
+    cursor: pointer;
+    background-color: rgb(230, 230, 0);
+    transform: scale(1.01);
 }
