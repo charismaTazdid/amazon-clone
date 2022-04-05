@@ -34,7 +34,7 @@ const Review = () => {
         setCart(cartProduct)
 
     }, []);
-
+//bla bla bla
     return (
         <div className='review-div'>
 
