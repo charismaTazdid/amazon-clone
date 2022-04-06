@@ -11,7 +11,7 @@ const Shipment = () => {
     const onSubmit = (data) => {
         const savedCart = getDatabaseCart();
         const orderDetails = { ...logedInUser, orderdProducts: savedCart, shipmentInfo: data, orderTime: new Date() }
-        fetch('http://localhost:5000/addOrder', {
+        fetch('https://shielded-crag-68168.herokuapp.com/addOrder', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(orderDetails)

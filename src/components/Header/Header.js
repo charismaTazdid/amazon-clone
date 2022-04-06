@@ -2,7 +2,6 @@ import { Search, ShoppingBasket } from '@mui/icons-material';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
-import fakeData from '../../fakeData';
 import { getDatabaseCart } from '../../utilities/databaseManager';
 
 import './header.css';
@@ -76,19 +75,7 @@ const Header = () => {
 
             </nav>
         </div>
-        // <div className="header">
-        //     <img src={logo} alt="" />
-        //     <nav>
-        //         <Link to="/shop">  Shop </Link>
-        //         <Link to="/order-review">Order Review</Link>
-        //         <Link to="/inventory">FBA inventory management</Link>
-        //         {
-        //             logedInUser.email ? <button className='signOut-btn' onClick={() => setLogedInUser({})}>Sign Out</button>  :
-        //             <Link to="/login"> Login </Link>
-        //         }
-
-        //     </nav>
-        // </div>
+       
     );
 };
 

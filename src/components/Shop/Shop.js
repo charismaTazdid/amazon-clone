@@ -15,7 +15,7 @@ const Shop = () => {
     const [cart, setCart] = useState([])
    
     useEffect(()=> {
-        fetch('http://localhost:5000/getProducts')
+        fetch('https://shielded-crag-68168.herokuapp.com/getProducts')
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
@@ -24,7 +24,7 @@ const Shop = () => {
         const savedCart = getDatabaseCart();
         const productKeys = Object.keys(savedCart);
 
-        fetch('http://localhost:5000/selectedProduct', {
+        fetch('https://shielded-crag-68168.herokuapp.com/selectedProduct', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(productKeys)
